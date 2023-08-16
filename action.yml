@@ -10,10 +10,9 @@ inputs:
     description: 'The version of the tf-summarize cli to install. Defaults to `latest`.'
     default: latest
     required: false
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
 runs:
   using: 'node16'
   main: 'dist/index.js'
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'
