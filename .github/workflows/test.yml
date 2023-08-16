@@ -1,13 +1,15 @@
 name: 'build-test'
-on: # rebuild any PRs and main branch changes
+
+on:
   pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
-      - 'releases/*'
 
 jobs:
-  build: # make sure build/ci work properly
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,10 +17,37 @@ jobs:
           npm install
       - run: |
           npm run all
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
+
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        tf-summarize-versions: [ v0.3.1, latest ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - uses: ./
+
+      - name: Setup tf-summarize - ${{ matrix['tf-summarize-versions'] }}
+        uses: ./
         with:
-          milliseconds: 1000
+          tf-summarize-version: ${{ matrix['tf-summarize-versions'] }}
+
+      - name: Validate tf-summarize version - When exact version is specified
+        if: ${{ matrix['tf-summarize-versions'] != 'latest' }}
+        shell: bash
+        run: |
+          actual_version=v$(tf-summarize -v | awk -F ': ' '{ print $2 }')
+          expected_version=${{ matrix['tf-summarize-versions'] }}
+     
+          if [ "$actual_version" == "$expected_version" ]; then
+            echo "Test succeeded"
+          else
+            echo "Versions are different"
+            echo "Actual: ${actual_version}"
+            echo "Expected: ${expected_version}"
+            exit 1
+          fi
+
+      - name: Validate tf-summarize Version - When exact version is not specified
+        if: ${{ matrix['tf-summarize-versions'] == 'latest' }}
+        run: tf-summarize -v
