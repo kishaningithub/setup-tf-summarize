@@ -14,14 +14,14 @@ The default configuration installs the latest version of tf-summarize
 
 ```yaml
 steps:
-- uses: kishaningithub/setup-tf-summarize@v1
+- uses: kishaningithub/setup-tf-summarize@v2
 ```
 
 A specific version of tf-summarize can also be installed
 
 ```yaml
 steps:
-- uses: kishaningithub/setup-tf-summarize@v1
+- uses: kishaningithub/setup-tf-summarize@v2
   with:
     tf-summarize-version: v0.3.1
 ```
@@ -31,7 +31,7 @@ by default it uses `GITHUB_TOKEN`.
 
 ```yaml
 steps:
-- uses: kishaningithub/setup-tf-summarize@v1
+- uses: kishaningithub/setup-tf-summarize@v2
   with:
     github-token: ${{ secrets.MY_PAT }}
 ```
@@ -48,9 +48,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
    
-    - uses: kishaningithub/setup-tf-summarize@v1
+    - uses: kishaningithub/setup-tf-summarize@v2
 
     - name: Print tf-summarize version and help
       run: |
