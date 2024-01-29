@@ -1,34 +1,20 @@
 # Contributing
 
-> First, you'll need to have a reasonably modern version of `node` handy. This won't work with versions older than 9, for instance.
+> Ensure you have the version of nodejs specified in
+> the [.node-version](.node-version) file
 
 Install the dependencies
+
 ```bash
-$ npm install
+npm install
 ```
 
-Build the typescript and package it for distribution
+Run the following command to run build, format, lint, package and test.
+Ensure to run this before raising a PR.
+
 ```bash
-$ npm run build && npm run package
+npm run all
 ```
-
-Run the tests :heavy_check_mark:
-```bash
-$ npm test
-
- PASS  ./index.test.js
-  ✓ throws invalid number (3ms)
-  ✓ wait 500 ms (504ms)
-  ✓ test runs (95ms)
-
-...
-```
-
-Before raising the PR run the following command
-```bash
-$ npm run all
-```
-this single command runs build, format, lint, package and test
 
 ## References
 

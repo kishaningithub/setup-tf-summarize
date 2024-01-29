@@ -1,5 +1,5 @@
-import {expect, test} from '@jest/globals'
-import {computeExtension, FileType} from '../src/url'
+import { expect, test } from '@jest/globals'
+import { computeExtension, FileType } from '../src/url'
 
 test('compute extension', async () => {
   expect(computeExtension('v0.3.7', 'linux')).toEqual(FileType.Tar)
