@@ -1,8 +1,8 @@
 import * as core from '@actions/core'
-import {computeDownloadContext, FileType} from './url'
-import {downloadTool, extractTar, extractZip} from '@actions/tool-cache'
+import { computeDownloadContext, FileType } from './url'
+import { downloadTool, extractTar, extractZip } from '@actions/tool-cache'
 
-async function setup(): Promise<void> {
+export async function setup(): Promise<void> {
   try {
     const downloadContext = await computeDownloadContext()
     core.info(`downloading tf-summarize from ${downloadContext.url}`)
@@ -11,13 +11,10 @@ async function setup(): Promise<void> {
       [FileType.Zip]: extractZip,
       [FileType.Tar]: extractTar
     }
-    const pathToCLI: string = await extractor[downloadContext.fileType](
-      pathToZipArtifact
-    )
+    const pathToCLI: string =
+      await extractor[downloadContext.fileType](pathToZipArtifact)
     core.addPath(pathToCLI)
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
 }
-
-setup()

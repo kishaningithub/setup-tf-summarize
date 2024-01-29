@@ -2,11 +2,12 @@
 
 [![build-test](https://github.com/kishaningithub/setup-tf-summarize/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/kishaningithub/setup-tf-summarize/actions/workflows/test.yml)
 
-This action installs [tf-summarize](https://github.com/dineshba/tf-summarize) in github action runner.
+This action installs [tf-summarize](https://github.com/dineshba/tf-summarize) in GitHub
+action runner.
 
 ## Usage
 
-This action can be used to install [tf-summarize](https://github.com/dineshba/tf-summarize) on all platforms 
+This action can be used to install [tf-summarize](https://github.com/dineshba/tf-summarize) on all platforms
 (Linux, Mac and Windows). When running on windows we recommend setting the shell to bash.
 
 The default configuration installs the latest version of tf-summarize
@@ -25,7 +26,8 @@ steps:
     tf-summarize-version: v0.3.1
 ```
 
-If for any reason you need to use a separate github token that is also supported, by default it uses `GITHUB_TOKEN`
+If for any reason you need to use a separate GitHub token that is also supported,
+by default it uses `GITHUB_TOKEN`.
 
 ```yaml
 steps:

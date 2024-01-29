@@ -1,8 +1,8 @@
 import os from 'os'
 import * as core from '@actions/core'
-import {getInput} from '@actions/core'
-import {getOctokit} from '@actions/github'
-import {GitHub} from '@actions/github/lib/utils'
+import { getInput } from '@actions/core'
+import { getOctokit } from '@actions/github'
+import { GitHub } from '@actions/github/lib/utils'
 import * as semver from 'semver'
 
 export enum FileType {
