@@ -1,6 +1,6 @@
 # Setup tf-summarize
 
-[![build-test](https://github.com/kishaningithub/setup-tf-summarize/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/kishaningithub/setup-tf-summarize/actions/workflows/test.yml)
+[![ci](https://github.com/kishaningithub/setup-tf-summarize/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/kishaningithub/setup-tf-summarize/actions/workflows/test.yml)
 
 This action installs [tf-summarize](https://github.com/dineshba/tf-summarize) in GitHub
 action runner.
