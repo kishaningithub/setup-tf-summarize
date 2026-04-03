@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import { computeDownloadContext, FileType } from './url'
+import { computeDownloadContext, FileType } from './url.js'
 import { downloadTool, extractTar, extractZip } from '@actions/tool-cache'
 
 export async function setup(): Promise<void> {
