@@ -1,7 +1,7 @@
 # Contributing
 
-> Ensure you have the version of nodejs specified in
-> the [.node-version](.node-version) file
+> Ensure you have the version of nodejs specified in the
+> [.node-version](.node-version) file
 
 Install the dependencies
 
@@ -9,8 +9,8 @@ Install the dependencies
 npm install
 ```
 
-Run the following command to run build, format, lint, package and test.
-Ensure to run this before raising a PR.
+Run the following command to run build, format, lint, package and test. Ensure
+to run this before raising a PR.
 
 ```bash
 npm run all

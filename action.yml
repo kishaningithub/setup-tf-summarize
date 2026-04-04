@@ -7,11 +7,12 @@ inputs:
     default: ${{ github.token }}
     required: false
   tf-summarize-version:
-    description: 'The version of the tf-summarize cli to install. Defaults to `latest`.'
+    description:
+      'The version of the tf-summarize cli to install. Defaults to `latest`.'
     default: latest
     required: false
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
 branding:
   icon: 'terminal'

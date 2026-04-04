@@ -1,7 +1,8 @@
 /**
- * The entrypoint for the action.
+ * The entrypoint for the action. This file simply imports and runs the action's
+ * main logic.
  */
-import { setup } from './main'
+import { setup } from './main.js'
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
+/* istanbul ignore next */
 setup()
