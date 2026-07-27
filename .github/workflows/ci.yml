@@ -79,3 +79,18 @@ jobs:
           Validate tf-summarize Version - When exact version is not specified
         if: ${{ matrix['tf-summarize-versions'] == 'latest' }}
         run: tf-summarize -v
+
+  test-action-without-version-specification:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup tf-summarize
+        uses: ./
+
+      - name:
+          Validate tf-summarize Version - When exact version is not specified
+        run: tf-summarize -v
