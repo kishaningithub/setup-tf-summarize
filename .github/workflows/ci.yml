@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         id: checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
         id: setup-node
@@ -52,7 +52,7 @@ jobs:
         tf-summarize-versions: [v0.3.1, v0.3.6, latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup tf-summarize - ${{ matrix['tf-summarize-versions'] }}
         uses: ./
